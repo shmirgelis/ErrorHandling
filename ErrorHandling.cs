@@ -13,12 +13,22 @@ public static class ErrorHandling
 
             throw new Exception("Exception Handled by throwing new exception");
         }
-       
+
     }
 
     public static int? HandleErrorByReturningNullableType(string input)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        try
+        {
+            int number = int.Parse(input);
+            return number;
+        }
+        catch (Exception)
+        {
+
+            return null;
+        }
+
     }
 
     public static bool HandleErrorWithOutParam(string input, out int result)
