@@ -25,7 +25,6 @@ public static class ErrorHandling
         }
         catch (Exception)
         {
-
             return null;
         }
 
@@ -33,7 +32,7 @@ public static class ErrorHandling
 
     public static bool HandleErrorWithOutParam(string input, out int result)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return int.TryParse(input, out result);
     }
 
     public static void DisposableResourcesAreDisposedWhenExceptionIsThrown(IDisposable disposableObject)
